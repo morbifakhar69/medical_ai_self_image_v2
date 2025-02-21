@@ -35,6 +35,7 @@ class Sciebo:
         try:
             print('Trying to upload image in Sciebo.')
             with open(file_path, "rb") as file:
+                file.name="rn_"+file_name
                 response = requests.put(sciebo_url, data=file, auth=(cls.SCIEBO_USERNAME, cls.SCIEBO_PASSWORD))
 
             if response.status_code in [201, 204]:
@@ -63,6 +64,7 @@ class Sciebo:
             # Upload to Sciebo
             sciebo_url = f"{cls.SCIEBO_STATE_BASEURL}{json_file_name}"
             with open(json_file_path, "rb") as file:
+                file.name="rn_"+file_name
                 print('State json file is found and ready to upload')
                 response = requests.put(sciebo_url, data=file, auth=(cls.SCIEBO_USERNAME, cls.SCIEBO_PASSWORD))
 
