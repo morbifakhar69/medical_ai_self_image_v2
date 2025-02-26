@@ -18,8 +18,8 @@ def chat_page():
     if "messages" not in st.session_state:
         # st.session_state.assistant = XAIAssistant()
         st.session_state.messages = st.session_state.assistant.messages
-    st.subheader("Chat with Assitant",divider="gray")
-    st.markdown("Describe your situation to the assistant. You can also book an appointment with our doctor")
+    st.subheader("Mit dem Assistenten chatten",divider="gray")
+    st.markdown("Beschreiben Sie dem Assistenten Ihre Situation. Sie können auch einen Termin bei unserem Arzt vereinbaren")
 
     # Display chat messages
     for msg in st.session_state.assistant.messages:

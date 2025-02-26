@@ -30,9 +30,9 @@ def load_skin_data():
 
 def normalize_skin_color(skin_color):
     # Normalize the skin color to ensure matching between 'Black'/'b' and 'White'/'w'
-    if skin_color in ['Black', 'b']:
+    if skin_color in ['Schwarz', 'b']:
         return 'b'
-    elif skin_color in ['White', 'w']:
+    elif skin_color in ['Weiß', 'w']:
         return 'w'
     else:
         return skin_color
@@ -53,7 +53,7 @@ def get_images(skin_color):
             selected_image_key = random.choice(matching_keys)
             image_path=os.path.join("skin_images", selected_image_key)
             st.session_state.selected_image_path = image_path
-        print(f'Selected Image path: {image_path}')
+            print(f'Selected Image path: {image_path}')
     return st.session_state.selected_image_path  # Return the path of the selected image
 
 
