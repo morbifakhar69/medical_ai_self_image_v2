@@ -20,15 +20,11 @@ def decision():
     image_container=st.container()
         
     with image_container:
-        #image_container.markdown(image_container_styling, unsafe_allow_html=True)
-        image=show_upload_images() #new updated upload image module
 
-        print('Found image, resizing it')
+        
+        image=show_upload_images() #new updated upload image module
         resized_image = image.resize((IMAGE_WIDTH,IMAGE_HEIGHT))
-        #st.image(resized_image, caption="Uploaded Image", use_column_width=True)
-        st.image(resized_image, caption="Uploaded Image")
-        print('Image shown with st.image')
-        #st.markdown('</div>', unsafe_allow_html=True)
+        st.image(resized_image, caption="Zufallsbild")
 
 
 

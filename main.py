@@ -61,10 +61,9 @@ def main():
         skin_color = survey_data.get("skin_color", "default")  # Assuming "skin_color" is the key for the skin color data
         image_path = get_images(skin_color)
         with st.container():
-                print('Inside chat page container with only title , header and image uploader')
-                st.title("🤖 Medical Diagnostic Assistant")
+                st.title("🤖 Medizinisch-diagnostische Assistentin")
                 #col1, col2 = st.columns([1, 1]) #making two columns one for image upload and one for camera input
-                st.subheader("Diagnose your skin condition with the Medical Assistant", divider="gray")
+                st.subheader("Diagnostizieren Sie Ihren Hautzustand mit dem Medizinischen Assistenten", divider="gray")
                  #this is a placeholder for image upload
                 st.session_state["saved_image"]=image_path  #update state.saved_image with image path
                 initialize(image_path)  #Pass the image path during initialization

@@ -30,9 +30,9 @@ def load_skin_data():
 
 def normalize_skin_color(skin_color):
     # Normalize the skin color to ensure matching between 'Black'/'b' and 'White'/'w'
-    if skin_color in ['Black', 'b']:
+    if skin_color in ['Schwarz', 'b']:
         return 'b'
-    elif skin_color in ['White', 'w']:
+    elif skin_color in ['Weiß', 'w']:
         return 'w'
     else:
         return skin_color
@@ -64,9 +64,7 @@ def show_upload_images():
         return image
     else: print('No image in session state found')
 def show_images():
-    # Überprüfen, ob das Bild bereits ausgewählt wurde
 
-    # Bild öffnen und anzeigen
     if st.session_state.selected_image_path:
         print(f'Selected Image path in Markdown: {st.session_state.selected_image_path}')
         image = Image.open(st.session_state.selected_image_path)
