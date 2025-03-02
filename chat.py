@@ -3,10 +3,10 @@ from icecream import ic
 
 
 def create_appointment_bttns(): 
-        with st.popover('Do you wish to take an appointment?',use_container_width=True):
-            st.button("Yes", key="btn1",
-                            on_click=lambda: st.session_state.update(button_clicked="Make appointment"),use_container_width=True)
-            st.button("No", key="btn2",
+        with st.popover('Möchten Sie einen Termin vereinbaren??',use_container_width=True):
+            st.button("Ja", key="btn1",
+                            on_click=lambda: st.session_state.update(button_clicked="Termin vereinbaren"),use_container_width=True)
+            st.button("Nein", key="btn2",
                             on_click=lambda: st.session_state.update(button_clicked="Do not make appointment"),use_container_width=True)
 
 def get_assistant_response():
@@ -18,8 +18,8 @@ def chat_page():
     if "messages" not in st.session_state:
         # st.session_state.assistant = XAIAssistant()
         st.session_state.messages = st.session_state.assistant.messages
-    st.subheader("Chat with Assitant",divider="gray")
-    st.markdown("Describe your situation to the assistant. You can also book an appointment with our doctor")
+    st.subheader("Chat mit Assistentin",divider="gray")
+    st.markdown("Schildern Sie dem Assistenten Ihre Situation. Sie können auch einen Termin bei unserem Arzt buchen")
 
     # Display chat messages
     for msg in st.session_state.assistant.messages:

@@ -66,18 +66,30 @@ def main():
                 st.subheader("Diagnostizieren Sie Ihren Hautzustand mit dem Medizinischen Assistenten", divider="gray")
                  #this is a placeholder for image upload
                 st.session_state["saved_image"]=image_path  #update state.saved_image with image path
-                initialize(image_path)  #Pass the image path during initialization
+                
+                with st.status("Bild hochladen, bitte warten.."):
+                    st.write("Senden von Daten an Agent..")
+                    initialize(image_path)  #Pass the image path during initialization
+                
+                st.subheader("Schildern Sie dem Assistenten Ihre Situation. Sie können auch einen Termin bei unserem Arzt buchen", divider="grey")
                 decision() #this loads the chat and buttons
         chat_page()
         save_state_json()
 
     elif st.session_state["page"] == "thanks":
+        save_state_json()
+        thank_you_page()
         image_path = st.session_state["saved_image"]
         uuid = st.session_state.get("user_uuid")
         Sciebo.upload_image(image_path,uuid)
         Sciebo.upload_state_data(uuid)
-        save_state_json()
-        thank_you_page()
+        with st.status('Ihre Daten sicher bei uns speichern 😊'): 
+            st.write("Saving Image to Sciebo")
+            Sciebo.upload_image(image_path,uuid)
+            st.write("Saving Suvery info to Sciebo")
+            Sciebo.upload_state_data(uuid)
+      
+      
 
 
 if __name__ == "__main__":

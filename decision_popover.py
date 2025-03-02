@@ -21,15 +21,12 @@ def decision():
         
     with image_container:
 
-        
+
         image=show_upload_images() #new updated upload image module
         resized_image = image.resize((IMAGE_WIDTH,IMAGE_HEIGHT))
         st.image(resized_image, caption="Zufallsbild")
 
 
-
-
-    #st.markdown(set_title_styling(), unsafe_allow_html=True)
 
     if st.session_state["button_clicked"]:
         print("Button Clicked")
