@@ -1,0 +1,5 @@
+.streamlit
+.streamlit/secrets.toml
+uploaded_images/
+state_data/
+skin_images/
