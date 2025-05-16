@@ -59,7 +59,7 @@ def survey():
         for idx, q in enumerate(questions):
             q_key = f"q{idx + 1}"
             st.markdown(q["question"])
-            selected_option = st.radio( q["question"],  options_final, key= q_key,index=2, label_visibility="collapsed")
+            selected_option = st.radio( q["question"],  options_final, key= q_key,index=None, label_visibility="collapsed")
             st.session_state["survey"]["responses"][q_key] = selected_option
             st.subheader("",divider='gray')
             responses[q_key]=selected_option
