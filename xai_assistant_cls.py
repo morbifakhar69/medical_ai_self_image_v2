@@ -24,7 +24,7 @@ class XAIAssistant:
         if assistant_id:
             self.assistant = self.client.beta.assistants.retrieve(assistant_id)
         else:
-            with open("instructions.txt", "r", encoding="utf-8") as f:
+            with open("instructions_t.txt", "r", encoding="utf-8") as f:
                 instructions = f.read()
 
             self.assistant = self.client.beta.assistants.create(

@@ -15,7 +15,7 @@ def survey():
 
     st.title("Umfrage")
 
-    st.markdown("Bitte geben Sie Ihre ID ein")
+   # st.markdown("Bitte geben Sie Ihre ID ein")
    # name = st.text_input("ID", value=st.session_state["survey"].get("ID", ""))
 
     questions = []
@@ -39,7 +39,6 @@ def survey():
              ]
 
     #st.subheader("Fragebogen", divider='gray')
-    st.markdown("Im Folgenden finden Sie 14 Aussagen. \nBitte wählen Sie aus, inwiefern diese auf Sie zutreffen.")
     
     responses= {}
     # with st.form(key="my_form"):
@@ -53,9 +52,10 @@ def survey():
     with st.form(key="my_form"):
         name = st.text_input("ID", value=st.session_state["survey"].get("ID", ""))
 
-
+        st.subheader("",divider='gray')
         # Abfrage nach Hautfarbe
-       
+        st.markdown("Lesen Sie bitte jede dieser Aussagen aufmerksam durch und überlegen Sie, ob diese Aussage auf Sie persönlich für die letzten 6 Monate zutrifft oder nicht")
+
         for idx, q in enumerate(questions):
             q_key = f"q{idx + 1}"
             st.markdown(q["question"])
